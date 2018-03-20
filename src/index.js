@@ -43,9 +43,21 @@ window.setWantedBgColor = (type,background) => {
   });
 }
 
-window.setDifferent = (type) => {
+window.setDifferent = () => {
   window.setWantedBgColor('player','red');
   window.setWantedBgColor('alien','black');
   window.setWantedBgColor('predator','orange');
   window.setWantedBgColor('other','green');
+}
+
+
+
+cloneHeader = () => {
+  const body = document.querySelector('body');
+  const hOne = document.querySelector('body > h1');
+  const clon = hOne.cloneNode(true);
+  const clon2 = hOne.cloneNode(true);
+  body.insertBefore(clon,hOne);
+  const last1 = document.querySelector('body').lastElementChild;
+  body.insertBefore(clon2,last1);
 }
